@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="382.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutY="2.0" prefHeight="319.0" prefWidth="275.0" spacing="15.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="697.0" prefWidth="245.0">
+               <children>
+                  <Label fx:id="cellsToAnalyzeLabel" prefHeight="16.0" prefWidth="250.0" text="Cells to analyze">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <tooltip>
+                        <Tooltip text="Target cells to identify that are within the distance threshold of the reference cells" />
+                     </tooltip>
+                  </Label>
+                  <HBox prefHeight="3.0" prefWidth="245.0" />
+                  <HBox minHeight="20.0" prefHeight="49.0" prefWidth="245.0">
+                     <children>
+                        <ComboBox fx:id="cellsToAnalyzeComboBox" prefHeight="25.0" prefWidth="99999.0" />
+                     </children></HBox>
+                  <Label fx:id="refCellsLabel" prefHeight="16.0" prefWidth="250.0" text="References cells">
+                     <tooltip>
+                        <Tooltip text="Cells to use as reference to determine which cells to analyze get identified" />
+                     </tooltip>
+                     <font>
+                        <Font name="System Font" size="13.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="7.0" prefWidth="245.0" />
+                  <HBox minHeight="20.0" prefHeight="49.0" prefWidth="245.0">
+                     <children>
+                        <ComboBox fx:id="referenceCellsComboBox" prefHeight="25.0" prefWidth="99999.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="3.0" prefWidth="220.0">
+                     <children>
+                        <Label fx:id="distanceThresholdLabel" prefHeight="17.0" prefWidth="5000.0" text="Distance threshold:">
+                           <tooltip>
+                              <Tooltip text="Distance threshold to highlight the cells to analyze" />
+                           </tooltip>
+                        </Label>
+                        <TextField fx:id="distanceThresholdTextField" prefHeight="25.0" prefWidth="4990.0" text="1.00 µm" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="7.0" prefWidth="245.0" />
+                  <HBox minHeight="20.0" prefHeight="50.0" prefWidth="220.0">
+                     <children>
+                        <Slider fx:id="distanceThresholdSlider" max="10.0" prefHeight="16.0" prefWidth="99999.0" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="refCellsHBox1" prefHeight="3.0" prefWidth="220.0">
+                     <children>
+                        <Label fx:id="noRefCellLabel" prefHeight="17.0" prefWidth="5000.0" text="# reference cells:">
+                           <tooltip>
+                              <Tooltip text="Filter by number of reference cells within distance threshold. Double-click to set to noncumulative (exclusive)." />
+                           </tooltip>
+                        </Label>
+                        <TextField fx:id="noRefCellTextField" prefHeight="25.0" prefWidth="4990.0" text="1" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="refCellsHBox2" prefHeight="7.0" prefWidth="245.0" />
+                  <HBox fx:id="refCellsHBox3" minHeight="20.0" prefHeight="49.0" prefWidth="220.0">
+                     <children>
+                        <Slider fx:id="noRefCellSlider" max="10.0" prefHeight="16.0" prefWidth="99999.0" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="sessionActiveHBox" prefHeight="30.0" prefWidth="220.0">
+                     <children>
+                        <Label fx:id="sessionActiveLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="99999.0" text="(Current session active)" textFill="RED" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="20.0" prefWidth="220.0">
+                     <children>
+                        <Button fx:id="runButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="99999.0" text="Run">
+                           <tooltip>
+                              <Tooltip text="Run" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="settingsButton" mnemonicParsing="false" text="⋮">
+                           <tooltip>
+                              <Tooltip text="Click here for more options" />
+                           </tooltip></Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
